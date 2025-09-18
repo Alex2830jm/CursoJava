@@ -39,7 +39,7 @@ public class EjerciciosOperadores {
         var prestamoLibros = hasCredencial || km <= KM_REDONDA;
         System.out.println("Se te pueden prestar libros: "+ prestamoLibros);**/
 
-        System.out.print("Proporciona un dato entero: ");
+        /**System.out.print("Proporciona un dato entero: ");
         var dato = Integer.parseInt(scanner.nextLine());
 
         var isDentroRango = dato >= 1 && dato <= 10;
@@ -47,7 +47,33 @@ public class EjerciciosOperadores {
 
         //Revisar la logica inversa, si esta fuera de rango
         var isFueraRango = !(isDentroRango);
-        System.out.println("Variable fuera de rango (1 y 10): " + isFueraRango);
+        System.out.println("Variable fuera de rango (1 y 10): " + isFueraRango);**/
 
+        System.out.println("** Ticket de Venta **");
+        System.out.print("Precio leche: ");
+        var precioLeche = Double.parseDouble(scanner.nextLine());
+        System.out.print("Precio pan: ");
+        var precioPan = Double.parseDouble(scanner.nextLine());
+        System.out.print("Precio Lechuga ");
+        var precioLechuga = Double.parseDouble(scanner.nextLine());
+        System.out.print("Precio platanos: ");
+        var precioPlatanos = Double.parseDouble(scanner.nextLine());
+        System.out.print("Aplicar algún descuento (%): ");
+        var porcentajeDescuento = Integer.parseInt(scanner.nextLine());
+
+        var subTotal = precioLeche + precioPan + precioLechuga + precioPlatanos;
+        var descuento = subTotal * (porcentajeDescuento / 100.0);
+        var subTotalDescuento = subTotal - descuento;
+        var impuestos = subTotalDescuento * 0.16;
+
+        var totalCompra = subTotalDescuento + impuestos;
+        System.out.printf("""
+                    %nTicket de Venta
+                    %n -----------------
+                    Subtotal: $%.2f
+                    Descuento: $%.2f (%d%%)
+                    Impuesto (16%%): $%.2f
+                    Total: $%.2f
+                """, subTotal, descuento, porcentajeDescuento, impuestos, totalCompra);
     }
 }
