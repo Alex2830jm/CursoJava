@@ -13,10 +13,22 @@ public class SistemaAutenticacion {
         System.out.print("Ingresa la contraseña: ");
         String password = scaner.nextLine();
 
-        var validateUser = user.equals(USER);
+        /*var validateUser = user.equals(USER);
         var validatePass = password.equals(PASSWORD);
         var validation = validateUser && validatePass;
 
-        System.out.println("¿Los datos son correctos?: " + validation);
+        System.out.println("¿Los datos son correctos?: " + validation);*/
+
+        //Con validaciones de desicion
+        if(user.equals(USER) && password.equals(PASSWORD)){
+            System.out.println("Bienvenido al sistema");
+        } else if(!user.equals(USER) && password.equals(PASSWORD)) {
+            System.out.println("Usuario Invalido");
+        } else if (!password.equals(PASSWORD) && user.equals(USER)) {
+            System.out.println("Password Invalido");
+        } else if (!user.equals(USER) && !password.equals(PASSWORD)) {
+            System.out.println("Usuario y Password Invalidos");
+        }
+
     }
 }

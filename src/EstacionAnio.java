@@ -9,7 +9,8 @@ public class EstacionAnio {
         Integer mes = Integer.parseInt(scaner.nextLine());
 
         String estacionAnio;
-        if(mes == 1 || mes == 2 || mes == 12) {
+        //Identificacion con if
+        /*if(mes == 1 || mes == 2 || mes == 12) {
             estacionAnio = "Invierno";
         } else if (mes == 3 || mes == 4 || mes <= 5) {
             estacionAnio = "Primavera";
@@ -19,7 +20,16 @@ public class EstacionAnio {
             estacionAnio = "Otoño";
         } else {
             estacionAnio = "Estación Desconocida";
-        }
+        }*/
+
+        //Identificacion con switch mejorado
+        estacionAnio = switch (mes) {
+            case 1, 2, 12 -> "Invierno";
+            case 3, 4, 5 -> "Primavera";
+            case 6, 7, 8 -> "Verano";
+            case 9, 10, 11 -> "Otoño";
+            default -> "Estación Desconocida";
+        };
 
         System.out.println("La estación correspondiente es: " + estacionAnio);
     }
